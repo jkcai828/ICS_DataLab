@@ -3,9 +3,9 @@
 姓名：蔡纪坤  
 学号：24300810016  
 
-## 1. 实验目的
+## 1. 总述
 
-本实验通过在严格限制运算符、常量和控制结构的条件下完成整数与 IEEE 754 单精度浮点数的位级操作，加深对 32 位二进制补码、掩码、算术/逻辑移位、整数溢出、并行位运算以及浮点数规格化与 round-to-nearest-even 舍入规则的理解。
+按照实验要求成功完成实验
 
 ## 2. 实验环境
 
@@ -103,13 +103,11 @@ C 中对有符号整数的右移为算术右移，因此负数会在高位补 1�
 ./check_ops.py bits.c
 ```
 
-最终应显示 19 个函数全部通过，并出现：
+最终 19 个函数全部通过，并出现：
 
 ```text
 All 19 functions passed operator checks.
 ```
-
-将最终终端截图保存为 `images/check_ops.png`：
 
 ![check_ops](images/check_ops.png)
 
@@ -127,27 +125,6 @@ All 19 functions passed operator checks.
 Total points: 110/110
 ```
 
-将最终终端截图保存为 `images/btest.png`：
-
 ![btest](images/btest.png)
 
-### 4.3 一键检查
 
-最后执行：
-
-```bash
-./test.sh
-```
-
-确认构建、规则检查和完整正确性测试均通过。
-
-## 5. 参考资料
-
-1. 复旦大学《计算机系统基础》2026 秋季学期 Lab1：DataLab 实验文档。
-2. 实验仓库 `README.md`、`bits.c`、`tests.c`。
-3. Randal E. Bryant, David R. O'Hallaron, *Computer Systems: A Programmer's Perspective*。
-4. IEEE 754 single-precision floating-point representation and round-to-nearest-even rule.
-
-## 6. 实验总结
-
-本实验的主要难点并不是直接获得计算结果，而是在严格限制可用运算符和操作数量的情况下，用位级表示重新构造常见的算术、比较、舍入与浮点运算。整数部分让我进一步熟悉了补码、符号扩展、掩码构造和溢出检测；浮点部分则要求显式处理规格化数、非规格化数、NaN、Infinity 以及 ties-to-even 舍入。尤其是需要在满足正确性的同时压缩操作数数量，使我更直观地理解了底层位运算与高级语言表达式之间的对应关系。
